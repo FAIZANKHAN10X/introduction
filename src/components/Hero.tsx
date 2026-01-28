@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { ArrowRight, Terminal } from "lucide-react";
 
 export default function Hero() {

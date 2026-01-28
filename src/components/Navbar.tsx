@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronRight, Terminal } from "lucide-react";
 
 export default function FloatingNavbar() {

@@ -1,4 +1,3 @@
-import React from "react";
 import { ShieldCheck, Award, Terminal } from "lucide-react";
 
 const certifications = [

@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef } from "react";
 import { CheckCircle2, Terminal } from "lucide-react";
+import { useRef } from "react";
 
 export default function Experience() {
   const containerRef = useRef<HTMLElement>(null);

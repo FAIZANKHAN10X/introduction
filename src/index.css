@@ -4,7 +4,6 @@
   --font-sans: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   --font-serif: "Space Grotesk", sans-serif;
-
   --color-bg-dark: #0b0b07;
   --color-text-primary: #e2c9a2;
   --color-accent: #a37541;
@@ -32,8 +31,8 @@ h4,
 @layer utilities {
   .bg-noise {
     background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-    opacity: 0.06;
-    mix-blend-mode: overlay;
+    /* Reduced opacity slightly since mix-blend-mode is gone */
+    opacity: 0.04;
     pointer-events: none;
   }
 
@@ -58,7 +57,19 @@ h4,
     pointer-events: none;
   }
 
+  /* Optimized Glass Panel */
   .glass-panel {
-    @apply relative overflow-hidden border border-white/10 bg-[#0b0b07]/70 shadow-2xl;
+    @apply relative overflow-hidden border border-white/10 shadow-2xl;
+    /* Mobile: Solid-ish dark background, no blur (Fixes freeze) */
+    background-color: rgba(11, 11, 7, 0.9);
+  }
+
+  /* Desktop: Enable blur only on larger screens */
+  @media (min-width: 768px) {
+    .glass-panel {
+      background-color: rgba(11, 11, 7, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
   }
 }

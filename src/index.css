@@ -9,6 +9,11 @@
   --color-accent: #a37541;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px; /* offsets fixed navbar */
+}
+
 /* Base Styles */
 body {
   background-color: var(--color-bg-dark);
@@ -31,7 +36,6 @@ h4,
 @layer utilities {
   .bg-noise {
     background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-    /* Reduced opacity slightly since mix-blend-mode is gone */
     opacity: 0.04;
     pointer-events: none;
   }

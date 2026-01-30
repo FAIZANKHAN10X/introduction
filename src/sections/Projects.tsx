@@ -1,9 +1,9 @@
 import {
-  ExternalLink,
-  Github,
+  Activity,
   ArrowUpRight,
   Cpu,
-  Activity,
+  ExternalLink,
+  Github,
   Signal,
 } from "lucide-react";
 
@@ -80,7 +80,6 @@ function StatusPill({
         borderColor: map.border,
       }}
     >
-      {/* removed animate-pulse */}
       <span
         className="h-1.5 w-1.5 rounded-full"
         style={{ backgroundColor: map.fg }}
@@ -94,9 +93,8 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden border-t border-white/10 bg-[#0b0b07] py-20 sm:py-24"
+      className="relative overflow-hidden border-t border-white/10 bg-[#0b0b07] py-20 sm:py-24 scroll-mt-28"
     >
-      {/* Ambient overlays */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -114,13 +112,11 @@ export default function Projects() {
         }}
       />
 
-      <div className="mx-auto max-w-450 px-6 md:px-12 lg:px-24">
-        {/* Header */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <div className="mb-10 sm:mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between border-b border-white/10 pb-6">
           <div>
             <div className="inline-flex items-center gap-3 border-l border-[#a37541] pl-4 py-1">
               <span className="relative flex h-2 w-2">
-                {/* removed animate-ping */}
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#a37541]" />
               </span>
               <span className="font-mono text-[11px] sm:text-xs tracking-[0.22em] uppercase text-[#a37541]">
@@ -138,27 +134,21 @@ export default function Projects() {
             </p>
           </div>
 
-          {/* removed transition + hover effects */}
           <a
             href="https://github.com"
             className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.22em] text-[#e2c9a2]/60"
           >
-            View_All_Repositories
-            <ArrowUpRight className="h-4 w-4" />
+            View_All_Repositories <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-3 lg:gap-8">
           {projects.map((project) => (
             <article
               key={project.id}
               className="relative overflow-hidden border border-white/10 bg-[#0b0b07]/70 shadow-2xl"
             >
-              {/* Scan line */}
               <div className="pointer-events-none absolute top-0 left-0 h-px w-full bg-linear-to-r from-transparent via-[#a37541] to-transparent opacity-50" />
-
-              {/* Card vignette */}
               <div
                 className="pointer-events-none absolute inset-0"
                 style={{
@@ -167,11 +157,8 @@ export default function Projects() {
                 }}
               />
 
-              {/* removed hover wash */}
-
               <div className="relative z-10 flex items-center justify-between gap-4 border-b border-white/10 px-6 py-5">
                 <div className="flex items-center gap-3 min-w-0">
-                  {/* removed transition + group-hover color shift */}
                   <div className="rounded-lg border border-white/10 bg-white/5 p-2 text-[#e2c9a2]">
                     {project.icon}
                   </div>
@@ -184,7 +171,6 @@ export default function Projects() {
               </div>
 
               <div className="relative z-10 flex h-full flex-col px-6 py-6">
-                {/* removed transition-colors */}
                 <h3 className="font-serif text-2xl text-[#e2c9a2]">
                   {project.title}
                 </h3>
@@ -215,7 +201,6 @@ export default function Projects() {
                   </div>
 
                   <div className="flex shrink-0 gap-2">
-                    {/* removed transitions/hover */}
                     <a
                       href={project.github}
                       className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-[#e2c9a2]/60"
@@ -237,7 +222,6 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Bottom tech line (static) */}
               <div
                 className="pointer-events-none absolute bottom-0 left-0 h-0.5 w-full opacity-50"
                 style={{

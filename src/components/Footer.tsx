@@ -1,7 +1,15 @@
-import { Mail, Linkedin, Terminal } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Linkedin, Mail, Terminal } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const footerLinks = [
+    { label: "Projects", to: "/#projects" },
+    { label: "Experience", to: "/#experience" },
+    { label: "Toolkit", to: "/#toolkit" },
+    { label: "FAQ", to: "/#faq" },
+  ];
 
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#0b0b07] py-20 sm:py-24">
@@ -23,13 +31,12 @@ export default function Footer() {
         }}
       />
 
-      <div className="mx-auto max-w-450 px-6 md:px-12 lg:px-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <div className="mx-auto max-w-5xl">
           {/* Hook */}
           <div className="text-center">
             <div className="inline-flex items-center gap-3 border-l border-[#a37541] pl-4 py-1">
               <span className="relative flex h-2 w-2">
-                {/* removed animate-ping */}
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#a37541]" />
               </span>
               <span className="font-mono text-[11px] sm:text-xs tracking-[0.22em] uppercase text-[#a37541]">
@@ -42,7 +49,6 @@ export default function Footer() {
             </h2>
 
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-6">
-              {/* removed group + hover + transition-colors */}
               <a
                 href="mailto:email@example.com"
                 className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.22em] text-[#e2c9a2]/60"
@@ -65,9 +71,18 @@ export default function Footer() {
                 </span>
               </a>
             </div>
+
+            <div className="mt-8">
+              <Link
+                to="/booking"
+                className="inline-flex items-center gap-2 bg-text-primary text-bg-dark px-6 py-3 font-mono text-xs uppercase tracking-[0.18em] font-bold hover:bg-white transition-colors"
+              >
+                Book a call <Terminal size={14} />
+              </Link>
+            </div>
           </div>
 
-          {/* Status Pill (static; removed blur/hover/scale/pulse) */}
+          {/* Status Pill */}
           <div className="mt-12 sm:mt-14">
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0b0b07]/70 p-5 sm:p-6 shadow-2xl">
               <div className="pointer-events-none absolute top-0 left-0 h-px w-full bg-linear-to-r from-transparent via-[#a37541] to-transparent opacity-50" />
@@ -81,7 +96,6 @@ export default function Footer() {
 
               <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-4">
-                  {/* removed transition-transform + group-hover:scale */}
                   <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-[#e2c9a2]">
                     <Terminal className="h-5 w-5" />
                   </div>
@@ -97,7 +111,6 @@ export default function Footer() {
                 </div>
 
                 <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-white/40">
-                  {/* removed animate-pulse */}
                   <span className="h-2 w-2 rounded-full bg-[#a37541] shadow-[0_0_10px_rgba(163,117,65,0.35)]" />
                   ONLINE
                 </div>
@@ -119,16 +132,15 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* removed hover + transition-colors */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-xs text-white/35">
-              {["Projects", "Experience", "Stack"].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+              {footerLinks.map((l) => (
+                <Link
+                  key={l.label}
+                  to={l.to}
                   className="uppercase tracking-[0.22em]"
                 >
-                  {item}
-                </a>
+                  {l.label}
+                </Link>
               ))}
             </div>
           </div>

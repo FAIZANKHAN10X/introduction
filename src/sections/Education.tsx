@@ -1,4 +1,4 @@
-import { ShieldCheck, Award, Terminal } from "lucide-react";
+import { Award, ShieldCheck, Terminal } from "lucide-react";
 
 const certifications = [
   {
@@ -23,8 +23,10 @@ const certifications = [
 
 export default function Education() {
   return (
-    <section className="relative overflow-hidden border-t border-white/10 bg-[#0b0b07] py-20 sm:py-24">
-      {/* Ambient overlays */}
+    <section
+      id="education"
+      className="relative overflow-hidden border-t border-white/10 bg-[#0b0b07] py-20 sm:py-24 scroll-mt-28"
+    >
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -43,13 +45,11 @@ export default function Education() {
       />
       <div className="pointer-events-none absolute left-30 top-30 h-95 w-95 rounded-full bg-[#a37541]/10 blur-[120px]" />
 
-      <div className="relative mx-auto max-w-450 px-6 md:px-12 lg:px-24">
+      <div className="relative max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <div className="grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-16">
-          {/* Left */}
           <div className="space-y-6">
             <div className="inline-flex items-center gap-3 border-l border-[#a37541] pl-4 py-1">
               <span className="relative flex h-2 w-2">
-                {/* removed animate-ping */}
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#a37541]" />
               </span>
               <span className="font-mono text-[11px] sm:text-xs tracking-[0.22em] uppercase text-[#a37541]">
@@ -81,9 +81,7 @@ export default function Education() {
             </div>
           </div>
 
-          {/* Right */}
           <div className="relative">
-            {/* removed backdrop-blur-md */}
             <div className="relative overflow-hidden border border-white/10 bg-[#0b0b07]/70 shadow-2xl">
               <div className="pointer-events-none absolute top-0 left-0 h-px w-full bg-linear-to-r from-transparent via-[#a37541] to-transparent opacity-50" />
               <div
@@ -106,7 +104,6 @@ export default function Education() {
                 </span>
               </div>
 
-              {/* Rows (removed group + hover + transitions) */}
               <div className="relative z-10 divide-y divide-white/10">
                 {certifications.map((cert) => (
                   <div
@@ -158,10 +155,8 @@ export default function Education() {
               </div>
             </div>
 
-            {/* Live feed (static; removed blur + pulse) */}
             <div className="mt-6 rounded-2xl border border-white/10 bg-[#0b0b07]/70 px-5 py-4">
               <div className="flex items-center gap-3 font-mono text-xs text-white/40">
-                {/* removed animate-pulse */}
                 <span className="h-2 w-2 rounded-full bg-[#a37541]" />
                 <span className="tracking-[0.18em] uppercase">
                   Live Feed: Currently ingesting "Advanced RAG Pipelines"...

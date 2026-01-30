@@ -36,9 +36,13 @@ export default function Summary() {
             </h3>
 
             <p className="font-mono text-base md:text-lg text-text-primary/70 leading-relaxed max-w-xl">
-              High-impact Operations Strategist bridging legacy industrial
-              frameworks and cutting-edge AI. I don’t just optimize workflows—I
-              re-engineer the operational architecture for speed and accuracy.
+              I am an AI automation consultant based in UAE with experience
+              designing frameworks and cutting-edge AI. I don’t just optimize
+              workflows—I enterprise AI workflows, n8n automation systems,
+              industrial reporting bots, and scalable AI infrastructure. My work
+              focuses on reducing manual labor, increasing operational
+              efficiency, and building production-ready AI systems for
+              real-world businesses.
             </p>
 
             <div className="flex flex-wrap gap-2 pt-2">

@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import PageShell from "../components/PageShell";
 
 export default function BookingPage() {
   return (
-    <div className="min-h-screen bg-bg-dark text-text-primary selection:bg-accent selection:text-bg-dark">
-      <div className="fixed inset-0 z-0 pointer-events-none bg-noise" />
-
+    <PageShell>
       <Navbar />
 
       <main className="relative z-10 pb-32 pt-28">
@@ -14,10 +13,10 @@ export default function BookingPage() {
             <div className="mb-10 flex items-end justify-between border-b border-white/10 pb-6">
               <div>
                 <h1 className="font-serif text-3xl md:text-4xl text-text-primary">
-                  BOOK_A_CALL
+                  BOOK A CALL
                 </h1>
                 <p className="mt-2 font-mono text-xs uppercase tracking-widest text-accent/80">
-                  // Calendar embed placeholder (CAL ID later)
+                  Calendar embed placeholder (CAL ID later)
                 </p>
               </div>
 
@@ -25,7 +24,7 @@ export default function BookingPage() {
                 to="/#top"
                 className="font-mono text-xs uppercase tracking-[0.22em] text-text-primary/60 hover:text-text-primary transition-colors"
               >
-                Back_To_Base
+                Back To Base
               </Link>
             </div>
 
@@ -43,17 +42,18 @@ export default function BookingPage() {
                 >
                   Email
                 </a>
+
                 <Link
                   to="/#faq"
                   className="inline-flex items-center gap-2 border border-white/10 bg-white/5 px-4 py-2 font-mono text-xs uppercase tracking-[0.18em] text-text-primary/70"
                 >
-                  Read_FAQ
+                  Read FAQ
                 </Link>
               </div>
             </div>
           </div>
         </section>
       </main>
-    </div>
+    </PageShell>
   );
 }

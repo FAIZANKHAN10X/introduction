@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import PageShell from "../components/PageShell";
 
 import Hero from "../sections/Hero";
 import Summary from "../sections/Summary";
@@ -12,9 +13,7 @@ import FAQ from "../sections/FAQ";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-bg-dark text-text-primary selection:bg-accent selection:text-bg-dark">
-      <div className="fixed inset-0 z-0 pointer-events-none bg-noise" />
-
+    <PageShell>
       <Navbar />
 
       <main className="relative z-10 flex flex-col gap-24 md:gap-32 lg:gap-40 pb-32">
@@ -29,6 +28,6 @@ export default function HomePage() {
       </main>
 
       <Footer />
-    </div>
+    </PageShell>
   );
 }

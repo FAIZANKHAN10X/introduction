@@ -8,6 +8,7 @@ export default function Hero() {
 
   return (
     <section
+      aria-label="Hero"
       ref={rootRef}
       id="top"
       className="relative min-h-screen w-full flex flex-col justify-end pb-24 px-6 md:px-12 lg:px-24 overflow-hidden pt-32"
@@ -18,9 +19,11 @@ export default function Hero() {
           alt="Faizan Khan AI Automation Consultant UAE"
           className="h-full w-full object-cover opacity-80"
           loading="eager"
+          decoding="async"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-vignette" />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-bg-dark/50 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-bg-dark via-bg-dark/50 to-transparent" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto grid lg:grid-cols-[1.5fr_1fr] gap-16 items-end">
@@ -34,7 +37,7 @@ export default function Hero() {
             </h1>
             <h2
               data-anim="hero-subtitle"
-              className="text-3xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-[#6f481e] to-text-primary italic"
+              className="text-3xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-linear-to-r from-[#6f481e] to-text-primary italic"
             >
               AI Automation Consultant Systems Architect
             </h2>
@@ -58,7 +61,7 @@ export default function Hero() {
             </Link>
 
             <Link
-              to="/#projects"
+              to="#projects"
               className="px-8 py-4 border border-text-primary/20 text-text-primary font-mono text-sm uppercase tracking-wider flex items-center gap-2"
             >
               View Projects <ArrowRight size={16} />

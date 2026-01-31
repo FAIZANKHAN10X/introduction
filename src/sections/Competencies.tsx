@@ -1,13 +1,15 @@
 import {
+  ArrowUpRight,
   Briefcase,
   Cpu,
-  HardHat,
   Globe,
-  TrendingUp,
+  HardHat,
   Mic,
-  ArrowUpRight,
+  TrendingUp,
 } from "lucide-react";
+
 import SectionHeader from "../components/SectionHeader";
+import SectionShell from "../components/SectionShell";
 import { useSectionAnimation } from "../hooks/useSectionAnimation";
 import { animateCompetencies } from "../animations/sections/competencies";
 
@@ -51,47 +53,43 @@ const competencies = [
 ];
 
 export default function Competencies() {
-  const rootRef = useSectionAnimation<HTMLElement>(animateCompetencies);
+  const rootRef = useSectionAnimation<HTMLDivElement>(animateCompetencies);
 
   return (
-    <section
-      ref={rootRef}
-      id="competencies"
-      className="relative bg-bg-dark py-20 border-t border-white/10 scroll-mt-28"
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+    <SectionShell id="competencies">
+      <div ref={rootRef}>
         <SectionHeader
           title="CORE COMPETENCIES"
           subtitle="System Modules Active"
-          right={<>SYS READY</>}
+          right="SYS READY"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {competencies.map((item, idx) => (
             <div
               key={idx}
-              data-anim="competency-card"
+              data-animcompetency-card
               className={`${item.cols} glass-panel p-8 group`}
             >
               <div className="scanline-top" />
 
               <div className="flex justify-between items-start mb-6">
-                <div className="p-3 bg-white/5 border border-white/10 rounded-lg text-accent">
+                <div className="p-3 bg-white5 border border-white10 rounded-lg text-accent">
                   <item.icon size={24} />
                 </div>
-                <ArrowUpRight className="text-white/20" size={20} />
+                <ArrowUpRight className="text-white20" size={20} />
               </div>
 
               <h3 className="font-serif text-2xl text-text-primary mb-3">
                 {item.title}
               </h3>
-              <p className="font-mono text-sm text-text-primary/60 leading-relaxed">
+              <p className="font-mono text-sm text-text-primary60 leading-relaxed">
                 {item.desc}
               </p>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </SectionShell>
   );
 }

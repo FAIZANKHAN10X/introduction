@@ -16,7 +16,7 @@ export default function HomePage() {
     <PageShell>
       <Navbar />
 
-      <main className="relative z-10 flex flex-col gap-24 md:gap-32 lg:gap-40 pb-32">
+      <main className="relative z-10">
         <Hero />
         <Summary />
         <Competencies />

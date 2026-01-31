@@ -5,10 +5,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { label: "Projects", to: "/#projects" },
-    { label: "Experience", to: "/#experience" },
-    { label: "Toolkit", to: "/#toolkit" },
-    { label: "FAQ", to: "/#faq" },
+    { label: "Projects", to: "#projects" },
+    { label: "Experience", to: "#experience" },
+    { label: "Toolkit", to: "#toolkit" },
+    { label: "FAQ", to: "#faq" },
   ];
 
   return (
@@ -52,7 +52,7 @@ export default function Footer() {
               >
                 <Mail className="h-4 w-4" />
                 <span className="border-b border-transparent pb-0.5">
-                  email@example.com
+                  [email@example.com](mailto:email@example.com)
                 </span>
               </a>
 

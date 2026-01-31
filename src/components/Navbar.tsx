@@ -4,7 +4,7 @@ import { ChevronRight, Menu, Terminal, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const panelRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement | null>(null);
 
   const navLinks = [
     { name: "Competencies", to: "/#competencies" },
@@ -24,6 +24,7 @@ export default function Navbar() {
         setIsOpen(false);
       }
     };
+
     if (isOpen) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
@@ -31,17 +32,21 @@ export default function Navbar() {
   return (
     <header className="fixed top-4 md:top-6 left-0 right-0 z-50 px-4">
       <div className="mx-auto max-w-7xl">
-        <nav className="relative flex items-center justify-between rounded-2xl border border-white/10 bg-[#0b0b07]/80 backdrop-blur-md px-6 py-3 shadow-2xl">
+        <nav className="relative flex items-center justify-between rounded-2xl border border-white/10 bg-bg-dark/80 backdrop-blur-md px-6 py-3 shadow-2xl">
           <div className="scanline-top" />
 
           {/* Logo */}
-          <Link to="/#top" className="relative z-10 flex items-center gap-3">
+          <Link
+            to="/#top"
+            className="relative z-10 flex items-center gap-3"
+            onClick={() => setIsOpen(false)}
+          >
             <span className="flex h-2 w-2 shrink-0 rounded-full bg-accent" />
             <span className="font-mono text-xs tracking-[0.2em] uppercase text-text-primary">
-              System.Arch_v2.0
+              System.Archv2.0
             </span>
             <span className="hidden sm:inline font-mono text-[10px] tracking-[0.2em] uppercase text-accent/80">
-              // Online
+              Online
             </span>
           </Link>
 
@@ -75,37 +80,38 @@ export default function Navbar() {
               {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
-        </nav>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="absolute top-full left-0 right-0 mt-2 px-4 md:hidden">
-            <div ref={panelRef} className="glass-panel p-4 rounded-xl">
-              <div className="scanline-top" />
-              <div className="space-y-2">
-                {navLinks.map((link) => (
+          {/* Mobile Menu */}
+          {isOpen && (
+            <div className="absolute top-full left-0 right-0 mt-2 px-4 md:hidden">
+              <div ref={panelRef} className="glass-panel p-4 rounded-xl">
+                <div className="scanline-top" />
+
+                <div className="space-y-2">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      to={link.to}
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center justify-between p-3 rounded-lg hover:bg-white/5 font-mono text-xs uppercase tracking-[0.18em] text-text-primary/80"
+                    >
+                      {link.name}
+                      <ChevronRight size={14} className="text-accent" />
+                    </Link>
+                  ))}
+
                   <Link
-                    key={link.name}
-                    to={link.to}
+                    to="/booking"
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-between p-3 rounded-lg hover:bg-white/5 font-mono text-xs uppercase tracking-[0.18em] text-text-primary/80"
+                    className="flex items-center justify-center gap-2 w-full mt-4 bg-text-primary text-bg-dark p-3 rounded-lg font-mono text-xs uppercase tracking-[0.18em] font-bold"
                   >
-                    {link.name}
-                    <ChevronRight size={14} className="text-accent" />
+                    Get Started <Terminal size={14} />
                   </Link>
-                ))}
-
-                <Link
-                  to="/booking"
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full mt-4 bg-text-primary text-bg-dark p-3 rounded-lg font-mono text-xs uppercase tracking-[0.18em] font-bold"
-                >
-                  Get Started <Terminal size={14} />
-                </Link>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </nav>
       </div>
     </header>
   );

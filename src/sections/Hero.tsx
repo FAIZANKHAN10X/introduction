@@ -1,17 +1,21 @@
+import { Link } from "react-router-dom";
 import { ArrowRight, Terminal } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-end pb-24 px-6 md:px-12 lg:px-24 overflow-hidden pt-32">
+    <section
+      id="top"
+      className="relative min-h-screen w-full flex flex-col justify-end pb-24 px-6 md:px-12 lg:px-24 overflow-hidden pt-32"
+    >
       <div className="absolute inset-0 z-0">
         <img
-          src="/hero-image.avif"
+          src="hero-image.avif"
           alt="Faizan Khan AI Automation Consultant UAE"
           className="h-full w-full object-cover opacity-80"
           loading="eager"
         />
         <div className="absolute inset-0 bg-vignette" />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-bg-dark/50 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-bg-dark via-bg-dark/50 to-transparent" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto grid lg:grid-cols-[1.5fr_1fr] gap-16 items-end">
@@ -20,8 +24,8 @@ export default function Hero() {
             <h1 className="text-5xl md:text-7xl lg:text-8xl text-text-primary">
               Faizan Khan
             </h1>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-[#6f481e] to-text-primary italic">
-              AI Automation Consultant & Systems Architect
+            <h2 className="text-3xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-linear-to-r from-[#6f481e] to-text-primary italic">
+              AI Automation Consultant Systems Architect
             </h2>
           </div>
 
@@ -32,12 +36,19 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="px-8 py-4 bg-text-primary text-bg-dark font-mono text-sm uppercase tracking-wider font-bold flex items-center gap-2">
+            <Link
+              to="/booking"
+              className="px-8 py-4 bg-text-primary text-bg-dark font-mono text-sm uppercase tracking-wider font-bold flex items-center gap-2"
+            >
               Work With Me <Terminal size={16} />
-            </button>
-            <button className="px-8 py-4 border border-text-primary/20 text-text-primary font-mono text-sm uppercase tracking-wider flex items-center gap-2">
+            </Link>
+
+            <Link
+              to="/#projects"
+              className="px-8 py-4 border border-text-primary/20 text-text-primary font-mono text-sm uppercase tracking-wider flex items-center gap-2"
+            >
               View Projects <ArrowRight size={16} />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -2,18 +2,21 @@ import { CheckCircle2, Terminal } from "lucide-react";
 
 export default function Experience() {
   return (
-    <section className="relative bg-bg-dark py-20 border-t border-white/10">
+    <section
+      id="experience"
+      className="relative bg-bg-dark py-20 border-t border-white/10 scroll-mt-28"
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <div className="mb-16 flex items-center gap-6">
           <h2 className="font-serif text-4xl text-text-primary">
-            EXPERIENCE_LOG
+            EXPERIENCE LOG
           </h2>
           <div className="h-px flex-1 bg-accent/20" />
         </div>
 
         <div className="relative space-y-16">
           {/* Timeline Line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-white/10 md:-translate-x-1/2 ml-6 md:ml-0" />
+          <div className="absolute left-0 md:left-12 top-0 bottom-0 w-px bg-white/10 md:-translate-x-12 ml-6 md:ml-0" />
 
           {/* Role 1 */}
           <div className="grid md:grid-cols-2 gap-12 relative">
@@ -22,7 +25,7 @@ export default function Experience() {
                 Systems Architect
               </h3>
               <p className="font-mono text-sm text-accent mt-2 uppercase tracking-widest">
-                [2024 - Present]
+                2024 - Present
               </p>
               <p className="mt-4 text-sm text-text-primary/60 font-mono">
                 Designing autonomous operational workflows for enterprise
@@ -30,7 +33,7 @@ export default function Experience() {
               </p>
             </div>
 
-            <div className="absolute left-0 md:left-1/2 top-0 ml-[21px] md:ml-0 md:-translate-x-1/2 w-3 h-3 bg-accent rounded-full shadow-[0_0_10px_#a37541]" />
+            <div className="absolute left-0 md:left-12 top-0 ml-5.25 md:ml-0 md:-translate-x-12 w-3 h-3 bg-accent rounded-full shadow-[0_0_10px_#a37541]" />
 
             <div className="pl-16 md:pl-12">
               <div className="glass-panel p-6">
@@ -40,7 +43,7 @@ export default function Experience() {
                     <Terminal className="w-5 h-5 text-accent shrink-0" />
                     <span>
                       Deployed n8n agents reducing manual labor by{" "}
-                      <span className="text-accent font-bold">~70%</span>.
+                      <span className="text-accent font-bold">70%</span>.
                     </span>
                   </li>
                   <li className="flex gap-4 text-sm text-text-primary/80">
@@ -61,14 +64,14 @@ export default function Experience() {
                 Ops Liaison
               </h3>
               <p className="font-mono text-sm text-white/40 mt-2 uppercase tracking-widest">
-                [2019 - 2024]
+                2019 - 2024
               </p>
               <p className="mt-4 text-sm text-text-primary/50 font-mono">
-                Legacy Industrial Infrastructure & Family Business Operations.
+                Legacy Industrial Infrastructure + Family Business Operations.
               </p>
             </div>
 
-            <div className="absolute left-0 md:left-1/2 top-0 ml-[21px] md:ml-0 md:-translate-x-1/2 w-3 h-3 bg-bg-dark border border-white/30 rounded-full" />
+            <div className="absolute left-0 md:left-12 top-0 ml-5.25 md:ml-0 md:-translate-x-12 w-3 h-3 bg-bg-dark border border-white/30 rounded-full" />
 
             <div className="md:order-1 md:text-right md:pr-12 pl-16 md:pl-0">
               <div className="glass-panel p-6">
@@ -86,7 +89,7 @@ export default function Experience() {
                   <li className="flex gap-4 text-sm text-text-primary/80">
                     <CheckCircle2 className="w-5 h-5 text-white/30 shrink-0" />
                     <span>
-                      Coordinated high-stakes logistics for Jubilant, Teva, &
+                      Coordinated high-stakes logistics for Jubilant, Teva,
                       Radico.
                     </span>
                   </li>

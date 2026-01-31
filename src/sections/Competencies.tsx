@@ -9,21 +9,20 @@ import {
 } from "lucide-react";
 
 const competencies = [
-  // ROW 1: 2 + 1
+  // ROW 1 (2 + 1)
   {
     title: "Executive Liaison",
-    desc: "Stakeholder management & high-stakes negotiation with C-suite executives.",
+    desc: "Stakeholder management + high-stakes negotiation with C-suite executives.",
     icon: Briefcase,
     cols: "md:col-span-2",
   },
   {
-    title: "AI & Automation",
-    desc: "n8n, Zapier, & Custom LLM Orchestration.",
+    title: "AI Automation",
+    desc: "n8n, Zapier, Custom LLM Orchestration.",
     icon: Cpu,
     cols: "md:col-span-1",
   },
-
-  // ROW 2: 1 + 2
+  // ROW 2 (1 + 2)
   {
     title: "Industrial Operations",
     desc: "Bridging physical construction with digital oversight.",
@@ -32,15 +31,14 @@ const competencies = [
   },
   {
     title: "Digital Architecture",
-    desc: "Full-stack Web Dev, CMS/CRM, & Data Structures.",
+    desc: "Full-stack Web Dev, CMS/CRM, Data Structures.",
     icon: Globe,
     cols: "md:col-span-2",
   },
-
-  // ROW 3: 2 + 1 (Updated to match Row 1 layout)
+  // ROW 3 (2 + 1) Updated to match Row 1 layout
   {
     title: "Growth Hacking",
-    desc: "Algorithm Optimization, Narrative Design & Organic Reach.",
+    desc: "Algorithm Optimization, Narrative Design + Organic Reach.",
     icon: TrendingUp,
     cols: "md:col-span-2",
   },
@@ -54,20 +52,23 @@ const competencies = [
 
 export default function Competencies() {
   return (
-    <section className="relative bg-bg-dark py-20 border-t border-white/10">
+    <section
+      id="competencies"
+      className="relative bg-bg-dark py-20 border-t border-white/10 scroll-mt-28"
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         {/* Header */}
         <div className="mb-12 flex items-end justify-between border-b border-white/10 pb-6">
           <div>
             <h2 className="font-serif text-3xl md:text-4xl text-text-primary">
-              CORE_COMPETENCIES
+              CORE COMPETENCIES
             </h2>
             <p className="mt-2 font-mono text-xs uppercase tracking-widest text-accent/80">
-              // System Modules Active
+              System Modules Active
             </p>
           </div>
           <div className="hidden md:block font-mono text-xs text-white/30 tracking-widest">
-            [SYS_READY]
+            SYS READY
           </div>
         </div>
 
@@ -81,6 +82,7 @@ export default function Competencies() {
                 <div className="p-3 bg-white/5 border border-white/10 rounded-lg text-accent">
                   <item.icon size={24} />
                 </div>
+
                 {/* Static icon, no hover transition */}
                 <ArrowUpRight className="text-white/20" size={20} />
               </div>

@@ -1,5 +1,6 @@
 import { Cpu, Database, Globe, Terminal, Zap } from "lucide-react";
 import SectionShell from "../components/SectionShell";
+import Panel from "../components/Panel";
 
 const tools = [
   {
@@ -45,30 +46,23 @@ export default function Toolkit() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-4">
-          {tools.map((tool, idx) => (
-            <article key={idx} className="glass-panel p-6">
-              <div className="scanline-top" />
-
-              <div className="flex justify-between items-start mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-white5 border border-white10 rounded text-accent">
-                    <tool.icon size={20} />
+          {tools.map((tool, idx) => {
+            const Icon = tool.icon;
+            return (
+              <Panel key={idx} className="p-6">
+                <div className="flex items-center justify-between gap-4 mb-5">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-white5 border border-white10 rounded text-accent">
+                      <Icon size={20} />
+                    </div>
+                    <h3 className="font-mono text-sm tracking-widest text-text-primary uppercase">
+                      {tool.name}
+                    </h3>
                   </div>
-                  <h3 className="font-mono text-sm tracking-widest text-text-primary uppercase">
-                    {tool.name}
-                  </h3>
+                  <span className="text-10px font-mono border border-accent30 bg-accent10 text-accent px-2 py-1 rounded uppercase tracking-widest">
+                    {tool.status}
+                  </span>
                 </div>
-
-                <span className="text-10px font-mono border border-accent30 bg-accent10 text-accent px-2 py-1 rounded uppercase tracking-widest">
-                  {tool.status}
-                </span>
-              </div>
-
-              <div>
-                <h4 className="flex items-center gap-3 font-mono text-sm uppercase tracking-widest text-text-primary mb-4">
-                  <span className="h-2 w-2 bg-white20 rounded-sm" />
-                  Core Protocols
-                </h4>
 
                 <ul className="space-y-3">
                   {tool.items.map((item, i) => (
@@ -81,14 +75,14 @@ export default function Toolkit() {
                     </li>
                   ))}
                 </ul>
-              </div>
 
-              <div className="flex justify-between mt-6 pt-4 border-t border-white10 font-mono text-10px uppercase tracking-widest">
-                <span className="text-white30">Live Telemetry</span>
-                <span className="text-accent70">v2.0</span>
-              </div>
-            </article>
-          ))}
+                <div className="flex justify-between mt-6 pt-4 border-t border-white10 font-mono text-10px uppercase tracking-widest">
+                  <span className="text-white30">Live Telemetry</span>
+                  <span className="text-accent70">v2.0</span>
+                </div>
+              </Panel>
+            );
+          })}
         </div>
 
         <div className="mt-8 text-white25 font-mono text-xs">

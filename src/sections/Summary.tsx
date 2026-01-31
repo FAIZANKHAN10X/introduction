@@ -1,5 +1,3 @@
-import { Terminal } from "lucide-react";
-
 import SectionShell from "../components/SectionShell";
 import { useSectionAnimation } from "../hooks/useSectionAnimation";
 import { animateSummary } from "../animations/sections/summary";
@@ -33,7 +31,7 @@ export default function Summary() {
 
             <h3 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-text-primary leading-[1.1] tracking-tight">
               <span className="block">I build</span>
-              <span className="block w-fit italic text-transparent bg-clip-text bg-gradient-to-r from-6f481e to-text-primary pb-2 pr-2">
+              <span className="block w-fit italic text-transparent bg-clip-text bg-linear-to-r from-6f481e to-text-primary pb-2 pr-2">
                 unfair advantages
               </span>
               <span className="block">through autonomous systems.</span>

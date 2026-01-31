@@ -17,7 +17,7 @@ export default function SectionShell({
   children,
   className = "",
   scrollMtClassName = "scroll-mt-28",
-  withBorder = true,
+  withBorder = false,
 }: SectionShellProps) {
   return (
     <section
